@@ -12,7 +12,7 @@ int main (void)
   const gsl_root_fsolver_type *T;
   gsl_root_fsolver *s;
   double r = 0, r_expected = sqrt (5.0);
-  double x_lo = 0.0, x_hi = 5.0;
+  double x_lo = 4.0, x_hi = 5.0;
   gsl_function F;
   quadratic_params params = {1.0, 0.0, -5.0};
   F.function = &quadratic;
@@ -31,7 +31,7 @@ int main (void)
     r = gsl_root_fsolver_root (s);
     x_lo = gsl_root_fsolver_x_lower (s);
     x_hi = gsl_root_fsolver_x_upper (s);
-    status = gsl_root_test_interval (x_lo, x_hi,0, 0.001);
+    status = gsl_root_test_interval (x_lo, x_hi,0, 0.00001);
     if (status == GSL_SUCCESS)
       printf ("Converged:\n");
     

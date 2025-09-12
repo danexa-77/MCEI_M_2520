@@ -6,7 +6,8 @@ double quadratic (double x, void *params)
   double a = p->a;
   double b = p->b;
   double c = p->c;
-  return (a * x + b) * x + c;
+  //return (a * x + b) * x + c;
+  return sin(10*x) + cos(3*x);
 }
 
 double quadratic_deriv (double x, void *params)
